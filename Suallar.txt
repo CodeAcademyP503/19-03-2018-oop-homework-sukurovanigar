@@ -1,0 +1,135 @@
+-----------------------------------------------------------
+1.continue ve break ifadeleri arasindaki ferq nedir?      |
+-----------------------------------------------------------
+C#, C++ ve bir cox populyar dillerde break ve continue istifade olunur.. 
+ikisinin arasinda coxda ferq yoxdu amma bas qarisdiran bir movzudur.
+break qirmaq menasinda yeni bitirmek menasinda iken continue davam etdirmek demekdir.
+BREAK:
+Break deyimi :
+while
+for
+do? while
+swich
+foreach.
+donguleri icinden lazim olan anda tez cixmaq ucun istifade olunur. belelikle dongu sonlandirila bilir 
+misalcun:
+ekranda 1-den 20 e qeder sayi yazdiraq. Ancaq isteyirem ki sayac adindaki deyisenim 10 olanda dongum break olub dayansin.
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //deyisenimiz
+            int sayac;
+            //dongumuz
+            for (sayac = 1; sayac <= 20; sayac++)
+            {
+                if (sayac == 10)
+                {
+                    break;
+                }
+                //ekrana yazdirmaq
+                Console.Write( sayac);
+            }
+            Console.ReadLine();
+        }
+    }
+}
+bele olduqda consoleda :
+1 2 3 4 5 6 7 8 9 cixar
+belelikle sayac 10 olanda donguden cixir ve ekrana 1 den 9 a qeder reqem yazdirir. ekranda 10 yazilmayacaq.!!!
+CONTINUE:
+continue swich ile istifade olunmur..
+while, for, do?while, foreach donguleri ile istifade olunduqda ise  dongide bir sonraki addima atlamaqla is gorur.
+yene misal cekek: 
+ekranda 1-den 20 e qeder sayi yazdiraq ancaq sayacin deyeri 10 a beraber olduqda ise 10 u atlasin yeni otursun ve bir sonraki ededden yeni 11 den davam etsin..
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //deyisenimiz
+            int sayac;
+            //dongumuz
+            for (sayac = 1; sayac <= 20; sayac++)
+            {
+                if (sayac == 10)
+                {
+                    continue;
+                }
+                //ekrana yazdirmaq
+                Console.Write( sayac);
+            }
+            Console.ReadLine();
+        }
+    }
+}
+bele olduqda ise consoleda :
+1 2 3 4 5 6 7 8 9 11 12 13 14 15 16 17 18 19 20 
+cixar ve 10 olanda onu yazdirmaz..
+__________________________________________________________________________________________________
+--------------------------------------------------------------------------
+2. this ifadesi static metod daxilinde istifade oluna bilermi? Aciqlayin    |
+--------------------------------------------------------------------------
+mueyyen obyektin ve ya class-in ozu demekdir.
+ meselen:
+class House
+{
+    public string ev;
+
+    public House(string ev)
+    {
+	this.ev=ev;
+    }
+}
+ this ifadesi static methodu daxilinde istifade oluna bilmez.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+3.string ve String keywordleri arasindaki benzer ve ferqli cehetleri yazin ve harda istifade olunabileceklerine dair kod numunesi gosterin  |
+------------------------------------------------------------------------------------------------------------------------------------------
+string ifadesinden System.String sinifini cagirmaq ucun istifade etdiyimiz  bir seydir.. 
+ele de bir ferqi yoxdu 
+String text = "Baku";
+string text = "Baku";
+eyni sey cixacaqdir.. :)
+----------------------------------------------------------------------------------------------------------
+4.Equals(),GetHashCode(),GetType(),ToString() metodlari hansi klassin methodlaridir ve vezifeleri nedir?   |
+----------------------------------------------------------------------------------------------------------
+Bu metodlar hansisa bir object classi yaradanda o classin icinde default olaraq C# terefinden yaradilir.. 
+vezifeleri:
+Equals();
+meselen bir a ve bir de b obyeektimiz var.
+if (a.Equals(b))
+{
+Console.WriteLine(true);
+}
+eger a b ye beraberdirse o zaman true cixart mentiqindedir.
+GetHashCode();
+int a=6;
+int b=6;
+int sayi1=a.GetHashCode();
+int sayi2=b.GetHashCode();
+cavab bize 6 ni qaytaracaq.. cunki a ve b ye yuxarida 6 vermisik.
+
+GetType();
+bu ise verilen numunenin novunu bize qaytarir.
+ToString();
+Bu virtual usul sayilir. daxil ediken deyerin datatype i strige conderir..
+-------------------------------------------------------------------------------------------
+5.public ve static keywordleri arasinda benzerlik ya da ferqlilik varmi? Varsa nelerdir?  |
+-------------------------------------------------------------------------------------------
+Static public-le birge islenir. 
+Class uzerinden deyer verilir.
+Obyekte deyilde class-a aid olur. 
+Lakin public ile verilmis deyer obyekte aid olur.
+Misal olaraq: 
+class Nomre
+{
+    public static int Azercell;
+    public int Bakcell;
+}
+Burada Bakcell parametrinden Mainde istifade ede bilerik.. ancaq Azercell parametrinden ise Mainde istifade ede bilmerik.. metroda oldugu kimi :))
+
+Benden bu kadar :( </3
